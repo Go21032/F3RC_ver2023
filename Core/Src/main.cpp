@@ -69,7 +69,7 @@ enum State{
 	MOVE_2, //ポイント2(-0.7,0.5)にベジェで移動
 	STAY, //(-0.7,0.5)にとどまる
 	MOVE_3, //ポイント３(0,0)にベジェで移動
-	END
+	END //終わり
 };
 
 enum State state = START;
@@ -121,7 +121,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
   f3rc.Start();
   Omni oni(&f3rc, 0.005f);
-  pomni = &oni;
 /***ゼロ位置制御とか単体でやるときに使う***/
 // while(1){
 //	 if(f3rc.Sensor0.GetValue()){
@@ -173,7 +172,7 @@ int main(void)
   					break;
   		  		case STAY_ZERO:
   		  			oni.ZeroIti(0, 0, 0);
-  		  			if(f3rc.Sensor0.GetValue())
+  		  			if(f3rc.PS3.GetButton(Controller::Cross))
   		  				changephase(MOVE_1);
   		  			break;
   		  		case MOVE_1:
@@ -188,7 +187,7 @@ int main(void)
   					break;
   		  		case STAY:
   					oni.ZeroIti(-0.5f, 0.6f, 0);
-  					if(f3rc.Sensor0.GetValue())
+  					if(f3rc.PS3.GetButton(Controller::Square))
   						changephase(MOVE_3);
   					break;
   		  		case MOVE_3:
