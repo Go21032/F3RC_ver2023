@@ -52,7 +52,6 @@
 /* USER CODE BEGIN PV */
 volatile bool flag = false;
 F3rcLibrary f3rc;
-Omni *pomni;
 
 /* USER CODE END PV */
 
@@ -63,33 +62,6 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
-//メカナムの足回り制御
-//void Move() {
-//	float x, y, w;
-//	x = f3rc.PS3.GetAnalogL_X() * MOVE_XY;
-//	y = f3rc.PS3.GetAnalogL_Y() * MOVE_XY;
-//	w = f3rc.PS3.GetAnalogR_X() * MOVE_ROTATE;
-//
-//	float v1, v2, v3, v4;
-//	v1 = -x * sinf(φ) + y * cosf(φ) + L * w;
-//	v2 = -x * sinf(φ) - y * cosf(φ) + L * w;
-//	v3 = x * sinf(φ) - y * cosf(φ) + L * w;
-//	v4 = x * sinf(φ) + y * cosf(φ) + L * w;
-//
-//	float d = 60.f;
-//	v1 = (v1 > d || v1 < -d) ? d * v1 / abs(v1) : v1;
-//	v2 = (v2 > d || v2 < -d) ? d * v2 / abs(v2) : v2;
-//	v3 = (v3 > d || v3 < -d) ? d * v3 / abs(v3) : v3;
-//	v4 = (v4 > d || v4 < -d) ? d * v4 / abs(v4) : v4;
-//
-//	f3rc.M5.SetDuty(v1);
-//	f3rc.M3.SetDuty(v2);
-//	f3rc.M1.SetDuty(v3);
-//	f3rc.M2.SetDuty(v4);
-//
-//}
-
 enum State{
 	START,
 	MATU,
