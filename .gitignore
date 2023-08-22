@@ -1,0 +1,7 @@
+/Debug/
+/Release/
+/.settings/
+.mxproject
+*.launch
+/Core/Inc/Test
+/Core/Inc/F3rcLibrary/F3RC_LibraryParameter.h
