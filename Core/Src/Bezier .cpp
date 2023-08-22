@@ -47,5 +47,3 @@ float Bezier::Bezier6(float t, float p1, float p2, float p3, float p4, float p5,
 {
     return Bezier1(t, Bezier5(t, p1, p2, p3, p4, p5, p6), Bezier5(t, p2, p3, p4, p5, p6, p7));
 }
-
-
