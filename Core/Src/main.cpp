@@ -65,9 +65,8 @@ void SystemClock_Config(void);
 enum State{
 	START,
 	MATU,
-	STAY_ZERO,//ゼロ位置制御
-	MOVE_1, //(0.5,0.5)にベジェで移動
-	MOVE_2, //(-0.7,0.5)にベジェで移動
+	MOVE_1, //ポイント１(0.5,0.5)にベジェで移動
+	MOVE_2, //ポイント2(-0.7,0.5)にベジェで移動
 	STAY, //(-0.7,0.5)にとどまる
 	MOVE_3, //ポイント３(0,0)にベジェで移動
 	END //終わり
